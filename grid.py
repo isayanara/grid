@@ -1,8 +1,8 @@
 class HexGrid:
     def __init__(self, L, N, M):
-        self.L = 3
-        self.N = 5
-        self.M = 7
+        self.L = L
+        self.N = N
+        self.M = M
         self.grid = [[0] * N for _ in range(M)]
     
     def print_grid(self):
