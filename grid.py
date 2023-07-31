@@ -1,3 +1,4 @@
+#  создаем гексагананльную решетку
 class HexGrid:
     def __init__(self, L, N, M):
         self.L = L
@@ -8,6 +9,7 @@ class HexGrid:
     def print_grid(self):
         for row in self.grid:
             print(row)
+# Заполняем решетку значениями 0 или 1 с заданой верояьностью
 import random
 
 def fill_grid(grid, p):
@@ -15,6 +17,7 @@ def fill_grid(grid, p):
         for j in range(grid.N):
             if random.random() < p:
                 grid.grid[i][j] = 1
+# Функция подсчета количества доменов на алгоритме обхода в глубину (DFS)
 def count_domains(grid):
     visited = [[False] * grid.N for _ in range(grid.M)]
     count = 0
@@ -40,6 +43,7 @@ def count_domains(grid):
                 count += 1
 
     return count
+# Функция подсчета количества неодносвязаных доменов
 def count_disconnected_domains(grid):
     visited = [[False] * grid.N for _ in range(grid.M)]
     count = 0
@@ -67,6 +71,7 @@ def count_disconnected_domains(grid):
                     count += 1
 
     return count
+# Применение функций: Создаем заданую решетку,  заполняем данными, подсчитываем кол-во доменов, подсчет неодносвязаных доменов
 grid = HexGrid(3, 5, 7)
 fill_grid(grid, 0.5)
 grid.print_grid()
