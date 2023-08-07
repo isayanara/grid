@@ -1,4 +1,4 @@
-#  создаем гексагананльную решетку
+#  создаем гексагананльную решетку и запончем ее нулями
 class HexGrid:
     def __init__(self, L, N, M):
         self.L = L
@@ -9,7 +9,7 @@ class HexGrid:
     def print_grid(self):
         for row in self.grid:
             print(row)
-# Заполняем решетку значениями 0 или 1 с заданой верояьностью
+# Заполняем сетку значениями 1 на основе заданной вероятности
 import random
 
 def fill_grid(grid, p):
